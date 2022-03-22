@@ -1,0 +1,11 @@
+{
+    "description": "File Storage Api",
+    "topics": [
+        "api",
+        "file",
+        "library",
+        "php",
+        "storage"
+    ],
+    "homepage": "https://github.com/fluxapps/flux-file-storage-api"
+}
