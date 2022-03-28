@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxFileStorageApi\Adapter\Api;
+namespace FluxFileStorageApi\Adapter\File;
 
 class FileDto
 {

@@ -3,8 +3,8 @@
 namespace FluxFileStorageApi\Channel\Storage\Command;
 
 use DirectoryIterator;
-use FluxFileStorageApi\Adapter\Api\FileDto;
-use FluxFileStorageApi\Adapter\Config\StorageConfigDto;
+use FluxFileStorageApi\Adapter\File\FileDto;
+use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
 use FluxFileStorageApi\Channel\Storage\StorageUtils;
 
 class ListCommand
