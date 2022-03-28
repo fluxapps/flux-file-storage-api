@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxFileStorageApi\Adapter\Config;
+namespace FluxFileStorageApi\Adapter\Storage;
 
 class StorageConfigDto
 {

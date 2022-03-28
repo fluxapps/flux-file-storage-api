@@ -3,7 +3,7 @@
 namespace FluxFileStorageApi\Channel\Storage\Command;
 
 use Exception;
-use FluxFileStorageApi\Adapter\Config\StorageConfigDto;
+use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
 use FluxFileStorageApi\Channel\Storage\StorageUtils;
 
 class CopyCommand

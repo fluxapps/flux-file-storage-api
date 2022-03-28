@@ -2,7 +2,7 @@
 
 namespace FluxFileStorageApi\Channel\Storage\Port;
 
-use FluxFileStorageApi\Adapter\Config\StorageConfigDto;
+use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
 use FluxFileStorageApi\Channel\Storage\Command\AppendCommand;
 use FluxFileStorageApi\Channel\Storage\Command\CopyCommand;
 use FluxFileStorageApi\Channel\Storage\Command\DeleteCommand;
