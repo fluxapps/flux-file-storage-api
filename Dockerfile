@@ -16,7 +16,7 @@ COPY . /flux-file-storage-api
 
 FROM scratch
 
-LABEL org.opencontainers.image.source="https://github.com/fluxapps/flux-file-storage-api"
+LABEL org.opencontainers.image.source="https://github.com/flux-eco/flux-file-storage-api"
 LABEL maintainer="fluxlabs <support@fluxlabs.ch> (https://fluxlabs.ch)"
 
 COPY --from=build /flux-file-storage-api /flux-file-storage-api

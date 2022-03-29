@@ -28,4 +28,4 @@ Minimal variables required to set are **bold**
 
 ## Example
 
-Look at [flux-file-storage-rest-api](https://github.com/fluxapps/flux-file-storage-rest-api)
+Look at [flux-file-storage-rest-api](https://github.com/flux-eco/flux-file-storage-rest-api)
