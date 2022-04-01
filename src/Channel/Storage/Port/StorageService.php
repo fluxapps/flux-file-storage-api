@@ -2,6 +2,7 @@
 
 namespace FluxFileStorageApi\Channel\Storage\Port;
 
+use FluxFileStorageApi\Adapter\File\FileDto;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
 use FluxFileStorageApi\Channel\Storage\Command\AppendCommand;
 use FluxFileStorageApi\Channel\Storage\Command\CopyCommand;
@@ -108,6 +109,9 @@ class StorageService
     }
 
 
+    /**
+     * @return FileDto[]|null
+     */
     public function list(string $path) : ?array
     {
         return ListCommand::new(
