@@ -2,6 +2,7 @@
 
 namespace FluxFileStorageApi\Adapter\Api;
 
+use FluxFileStorageApi\Adapter\File\FileDto;
 use FluxFileStorageApi\Channel\Storage\Port\StorageService;
 
 class FileStorageApi
@@ -82,6 +83,9 @@ class FileStorageApi
     }
 
 
+    /**
+     * @return FileDto[]|null
+     */
     public function list(string $path) : ?array
     {
         return $this->getStorageService()

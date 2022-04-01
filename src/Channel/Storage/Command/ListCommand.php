@@ -28,6 +28,9 @@ class ListCommand
     }
 
 
+    /**
+     * @return FileDto[]|null
+     */
     public function list(string $path) : ?array
     {
         $full_path = $this->getFullPath_(
