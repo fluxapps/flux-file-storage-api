@@ -1,11 +1,11 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
 use Exception;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\Port\StorageService;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\Port\StorageService;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
 class UploadCommand
 {

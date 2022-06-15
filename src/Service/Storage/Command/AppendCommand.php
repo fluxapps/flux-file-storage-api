@@ -1,12 +1,12 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
 use Exception;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
-class ReadCommand
+class AppendCommand
 {
 
     use StorageUtils;
@@ -27,19 +27,18 @@ class ReadCommand
     }
 
 
-    public function read(string $path) : ?string
+    public function append(string $path, string $data) : void
     {
         $full_path = $this->getFullPath_(
             $path
         );
-        if (!file_exists($full_path)) {
-            return null;
-        }
 
-        if (($data = file_get_contents($full_path)) === false) {
-            throw new Exception("Failed to read " . $full_path);
-        }
+        $this->mkdirParent(
+            $full_path
+        );
 
-        return $data;
+        if (!file_put_contents($full_path, $data, FILE_APPEND)) {
+            throw new Exception("Failed to write " . $full_path);
+        }
     }
 }

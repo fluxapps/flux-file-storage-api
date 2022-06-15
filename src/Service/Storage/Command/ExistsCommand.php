@@ -1,12 +1,11 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
-use Exception;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
-class AppendCommand
+class ExistsCommand
 {
 
     use StorageUtils;
@@ -27,18 +26,12 @@ class AppendCommand
     }
 
 
-    public function append(string $path, string $data) : void
+    public function exists(string $path) : bool
     {
         $full_path = $this->getFullPath_(
             $path
         );
 
-        $this->mkdirParent(
-            $full_path
-        );
-
-        if (!file_put_contents($full_path, $data, FILE_APPEND)) {
-            throw new Exception("Failed to write " . $full_path);
-        }
+        return file_exists($full_path);
     }
 }

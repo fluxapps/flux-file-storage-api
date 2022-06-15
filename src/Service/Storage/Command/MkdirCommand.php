@@ -1,11 +1,11 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
-class DeleteCommand
+class MkdirCommand
 {
 
     use StorageUtils;
@@ -26,13 +26,13 @@ class DeleteCommand
     }
 
 
-    public function delete(string $path) : void
+    public function mkdir(string $path) : void
     {
         $full_path = $this->getFullPath_(
             $path
         );
 
-        $this->delete_(
+        $this->mkdir_(
             $full_path
         );
     }

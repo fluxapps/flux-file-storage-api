@@ -1,12 +1,11 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
-use Exception;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
-class TouchCommand
+class GetFullPathCommand
 {
 
     use StorageUtils;
@@ -27,18 +26,15 @@ class TouchCommand
     }
 
 
-    public function touch(string $path) : void
+    public function getFullPath(string $path) : ?string
     {
         $full_path = $this->getFullPath_(
             $path
         );
-
-        $this->mkdirParent(
-            $full_path
-        );
-
-        if (!touch($full_path)) {
-            throw new Exception("Failed to touch " . $full_path);
+        if (!file_exists($full_path)) {
+            return null;
         }
+
+        return $full_path;
     }
 }

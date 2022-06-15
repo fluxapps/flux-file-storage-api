@@ -3,7 +3,7 @@
 namespace FluxFileStorageApi\Adapter\Api;
 
 use FluxFileStorageApi\Adapter\File\FileDto;
-use FluxFileStorageApi\Channel\Storage\Port\StorageService;
+use FluxFileStorageApi\Service\Storage\Port\StorageService;
 
 class FileStorageApi
 {

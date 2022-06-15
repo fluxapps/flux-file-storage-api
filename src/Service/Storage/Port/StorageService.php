@@ -1,23 +1,23 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Port;
+namespace FluxFileStorageApi\Service\Storage\Port;
 
 use FluxFileStorageApi\Adapter\File\FileDto;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\Command\AppendCommand;
-use FluxFileStorageApi\Channel\Storage\Command\CopyCommand;
-use FluxFileStorageApi\Channel\Storage\Command\DeleteCommand;
-use FluxFileStorageApi\Channel\Storage\Command\ExistsCommand;
-use FluxFileStorageApi\Channel\Storage\Command\ExtractCommand;
-use FluxFileStorageApi\Channel\Storage\Command\GetFullPathCommand;
-use FluxFileStorageApi\Channel\Storage\Command\ListCommand;
-use FluxFileStorageApi\Channel\Storage\Command\MkdirCommand;
-use FluxFileStorageApi\Channel\Storage\Command\MoveCommand;
-use FluxFileStorageApi\Channel\Storage\Command\ReadCommand;
-use FluxFileStorageApi\Channel\Storage\Command\StoreCommand;
-use FluxFileStorageApi\Channel\Storage\Command\SymlinkCommand;
-use FluxFileStorageApi\Channel\Storage\Command\TouchCommand;
-use FluxFileStorageApi\Channel\Storage\Command\UploadCommand;
+use FluxFileStorageApi\Service\Storage\Command\AppendCommand;
+use FluxFileStorageApi\Service\Storage\Command\CopyCommand;
+use FluxFileStorageApi\Service\Storage\Command\DeleteCommand;
+use FluxFileStorageApi\Service\Storage\Command\ExistsCommand;
+use FluxFileStorageApi\Service\Storage\Command\ExtractCommand;
+use FluxFileStorageApi\Service\Storage\Command\GetFullPathCommand;
+use FluxFileStorageApi\Service\Storage\Command\ListCommand;
+use FluxFileStorageApi\Service\Storage\Command\MkdirCommand;
+use FluxFileStorageApi\Service\Storage\Command\MoveCommand;
+use FluxFileStorageApi\Service\Storage\Command\ReadCommand;
+use FluxFileStorageApi\Service\Storage\Command\StoreCommand;
+use FluxFileStorageApi\Service\Storage\Command\SymlinkCommand;
+use FluxFileStorageApi\Service\Storage\Command\TouchCommand;
+use FluxFileStorageApi\Service\Storage\Command\UploadCommand;
 
 class StorageService
 {

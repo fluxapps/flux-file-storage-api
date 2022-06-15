@@ -1,12 +1,12 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
 use Exception;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
-class CopyCommand
+class SymlinkCommand
 {
 
     use StorageUtils;
@@ -27,7 +27,7 @@ class CopyCommand
     }
 
 
-    public function copy(string $path, string $to_path) : void
+    public function symlink(string $path, string $to_path) : void
     {
         $full_path = $this->getFullPath_(
             $path
@@ -47,8 +47,8 @@ class CopyCommand
             $to_full_path
         );
 
-        if (!copy($full_path, $to_full_path)) {
-            throw new Exception("Failed to copy " . $full_path . " to " . $to_full_path);
+        if (!symlink($full_path, $to_full_path)) {
+            throw new Exception("Failed to symlink " . $full_path . " to " . $to_full_path);
         }
     }
 }
