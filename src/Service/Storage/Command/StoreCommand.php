@@ -1,11 +1,12 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage\Command;
+namespace FluxFileStorageApi\Service\Storage\Command;
 
+use Exception;
 use FluxFileStorageApi\Adapter\Storage\StorageConfigDto;
-use FluxFileStorageApi\Channel\Storage\StorageUtils;
+use FluxFileStorageApi\Service\Storage\StorageUtils;
 
-class GetFullPathCommand
+class StoreCommand
 {
 
     use StorageUtils;
@@ -26,15 +27,18 @@ class GetFullPathCommand
     }
 
 
-    public function getFullPath(string $path) : ?string
+    public function store(string $path, string $data) : void
     {
         $full_path = $this->getFullPath_(
             $path
         );
-        if (!file_exists($full_path)) {
-            return null;
-        }
 
-        return $full_path;
+        $this->mkdirParent(
+            $full_path
+        );
+
+        if (!file_put_contents($full_path, $data)) {
+            throw new Exception("Failed to write " . $full_path);
+        }
     }
 }

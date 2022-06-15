@@ -1,6 +1,6 @@
 <?php
 
-namespace FluxFileStorageApi\Channel\Storage;
+namespace FluxFileStorageApi\Service\Storage;
 
 use Exception;
 
