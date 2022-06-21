@@ -62,9 +62,7 @@ class ExtractCommand
                 throw new Exception("Failed to extract " . $full_path . " to " . $to_full_path);
             }
         } finally {
-            if ($zip !== null) {
-                $zip->close();
-            }
+            $zip?->close();
         }
 
         if ($delete) {
