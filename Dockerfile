@@ -10,15 +10,17 @@ RUN change-namespace /code/flux-autoload-api FluxAutoloadApi FluxFileStorageApi\
 
 FROM alpine:latest AS build
 
-COPY --from=build_namespaces /code/flux-autoload-api /flux-file-storage-api/libs/flux-autoload-api
-COPY . /flux-file-storage-api
+COPY --from=build_namespaces /code/flux-autoload-api /build/flux-file-storage-api/libs/flux-autoload-api
+COPY . /build/flux-file-storage-api
+
+RUN (cd /build && tar -czf flux-file-storage-api.tar.gz flux-file-storage-api)
 
 FROM scratch
 
 LABEL org.opencontainers.image.source="https://github.com/flux-eco/flux-file-storage-api"
 LABEL maintainer="fluxlabs <support@fluxlabs.ch> (https://fluxlabs.ch)"
 
-COPY --from=build /flux-file-storage-api /flux-file-storage-api
+COPY --from=build /build /
 
 ARG COMMIT_SHA
 LABEL org.opencontainers.image.revision="$COMMIT_SHA"
