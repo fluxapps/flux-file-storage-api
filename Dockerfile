@@ -19,7 +19,6 @@ FROM scratch
 
 LABEL org.opencontainers.image.source="https://github.com/flux-eco/flux-file-storage-api"
 LABEL maintainer="fluxlabs <support@fluxlabs.ch> (https://fluxlabs.ch)"
-LABEL flux-docker-registry-rest-api-build-path="/flux-file-storage-api.tar.gz"
 
 COPY --from=build /build /
 
