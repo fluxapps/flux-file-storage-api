@@ -7,12 +7,6 @@ File Storage Api
 ### Non-Composer
 
 ```dockerfile
-COPY --from=docker-registry.fluxpublisher.ch/flux-file-storage-api:%tag% /flux-file-storage-api /%path%/libs/flux-file-storage-api
-```
-
-or
-
-```dockerfile
 RUN (mkdir -p /%path%/libs/flux-file-storage-api && cd /%path%/libs/flux-file-storage-api && wget -O - https://github.com/flux-eco/flux-file-storage-api/releases/download/%tag%/flux-file-storage-api-%tag%-build.tar.gz | tar -xz --strip-components=1)
 ```
 
