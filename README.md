@@ -4,7 +4,9 @@ File Storage Api
 
 ## Installation
 
-### Non-Composer
+### Native
+
+#### Download
 
 ```dockerfile
 RUN (mkdir -p /%path%/libs/flux-file-storage-api && cd /%path%/libs/flux-file-storage-api && wget -O - https://github.com/flux-eco/flux-file-storage-api/releases/download/%tag%/flux-file-storage-api-%tag%-build.tar.gz | tar -xz --strip-components=1)
@@ -14,7 +16,7 @@ or
 
 Download https://github.com/flux-eco/flux-file-storage-api/releases/download/%tag%/flux-file-storage-api-%tag%-build.tar.gz and extract it to `/%path%/libs/flux-file-storage-api`
 
-#### Usage
+#### Load
 
 ```php
 require_once __DIR__ . "/%path%/libs/flux-file-storage-api/autoload.php";
